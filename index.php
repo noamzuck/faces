@@ -1,6 +1,6 @@
 <?php
-$files = scandir('/');
-$json=json_encode($files, JSON_PRETTY_PRINT);
+$json = scandir('/labeled_images/');
+//$json=json_encode($json, JSON_PRETTY_PRINT);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +15,7 @@ $json=json_encode($files, JSON_PRETTY_PRINT);
     const json = []
     json.push("<?php
     for($i=2; $i<count($json); $i++){
-      echo $json[$i]
+      echo $json[$i];
     }
     ?>")
   </script>
