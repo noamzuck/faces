@@ -13,7 +13,7 @@ $json=json_encode($files, JSON_PRETTY_PRINT);
   <script defer src="face-api.min.js"></script>
   <script>
     const json = []
-    fruits.push("<?php
+    json.push("<?php
     for($i=2; $i<count($json); $i++){
       echo $json[$i]
     }
