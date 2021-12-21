@@ -1,6 +1,6 @@
 <?php
-$json = scandir('/labeled_images/');
-$json=array_diff(scandir('/app/'), array('.', '..'));
+$json = scandir('/app/labeled_images/');
+$json=array_diff(scandir('/app/labeled_images/'), array('.', '..'));
 ?>
 
 <!DOCTYPE html>
