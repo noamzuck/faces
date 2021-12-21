@@ -42,7 +42,7 @@ video.addEventListener('play', () => {
         const results = resizedDetections.map(d => faceMatcher.findBestMatch(d.descriptor))
         results.forEach((result, i) => {
             const box = resizedDetections[i].detection.box
-            const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString() })
+            const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString().replace('.jpg','') })
             drawBox.draw(canvas)
         })
     }, 100)
