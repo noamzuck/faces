@@ -69,7 +69,7 @@ async function loadFiles() {
     let url = 'https://faces-reg.herokuapp.com/'
     let res = await fetch(url),
         ret = await res.text(); 
-    return callback ? callback(ret) : ret; // a Promise() actually.
+    return ret; // a Promise() actually.
     //console.log(json)
 }
 loadFiles().then(ret => console.log(ret));
