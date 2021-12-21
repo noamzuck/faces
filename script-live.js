@@ -9,7 +9,7 @@ Promise.all([
     faceapi.nets.ssdMobilenetv1.loadFromUri('/models1')
 ]).then(loadArr)
 
-async function loadArr(json) {
+async function loadArr() {
     startVideo(json)
 }
 
