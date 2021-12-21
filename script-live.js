@@ -56,7 +56,7 @@ function loadLabeledImages(json) {
     return Promise.all(
         labels.map(async label => {
             const descriptions = []
-                const img = await faceapi.fetchImage(`labeled_images/${label}.jpg`)
+                const img = await faceapi.fetchImage(`labeled_images/${label}`)
                 const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
                 descriptions.push(detections.descriptor)
 
