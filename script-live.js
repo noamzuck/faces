@@ -66,22 +66,10 @@ function loadLabeledImages(json) {
 
 
 async function loadFiles() {
-    let url = 'https://faces-reg.herokuapp.com/'
+    let url = 'https://faces-reg.herokuapp.com/index1.php'
     let res = await fetch(url),
         ret = await res.text(); 
     return ret; // a Promise() actually.
     //console.log(json)
 }
 loadFiles().then(ret => console.log(ret));
-
-
-async function loadFiles1() {
-    let url = 'http://faces-reg.herokuapp.com/'
-    let json = await(await fetch(url)).json()
-    /*let res = await fetch(url),
-        ret = await res.text(); 
-    return ret;*/
-    return json;
-}
-//loadFiles1().then(ret => console.log(ret));
-console.log(loadFiles1())
