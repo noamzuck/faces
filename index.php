@@ -1,5 +1,5 @@
 <?php
-$json = scandir('/');
+$json = scandir('/labeled_images/');
 $json=array_diff(scandir('/'), array('.', '..'));
 ?>
 
