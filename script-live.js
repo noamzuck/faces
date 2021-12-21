@@ -7,8 +7,7 @@ Promise.all([
     faceapi.nets.faceLandmark68Net.loadFromUri('/models1'),
     faceapi.nets.faceRecognitionNet.loadFromUri('/models1'),
     faceapi.nets.ssdMobilenetv1.loadFromUri('/models1')
-])
-loadArr(json)
+]).then(loadArr)
 
 async function loadArr(json) {
     startVideo(json)
