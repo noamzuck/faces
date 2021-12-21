@@ -3,9 +3,9 @@
   
   $myfiles = array_diff(scandir($mydir), array('.', '..')); 
   
-  print_r($myfiles);*/
+  print_r($myfiles);
     
-    
+    //////////
 $arr="[";
 foreach (new DirectoryIterator(__DIR__) as $file) {
   if ($file->isFile()) {
@@ -13,5 +13,13 @@ foreach (new DirectoryIterator(__DIR__) as $file) {
   }
 }
 $arr.="'1']";
+print_r($arr);*/
+
+$arr=array();
+foreach (new DirectoryIterator(__DIR__) as $file) {
+  if ($file->isFile()) {
+  	array_push($arr,$file->getFilename());
+  }
+}
 print_r($arr);
 ?> 
