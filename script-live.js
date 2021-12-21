@@ -76,7 +76,7 @@ loadFiles().then(ret => console.log(ret));
 
 
 async function loadFiles1() {
-    let url = 'http://faces-reg.herokuapp.com/labeled_images/'
+    let url = 'http://faces-reg.herokuapp.com/'
     let json = await(await fetch(url)).json()
     /*let res = await fetch(url),
         ret = await res.text(); 
