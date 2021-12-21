@@ -1,3 +1,5 @@
+console.log(json)
+
 const video = document.getElementById('targetVideo')
 
 Promise.all([
@@ -74,5 +76,3 @@ async function loadFiles() {
 }
 loadFiles().then(ret => console.log(ret));
 */
-
-console.log(files)
