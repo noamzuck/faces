@@ -1,6 +1,32 @@
 //console.log(json)
 
+const video = document.getElementById('targetVideo')
 
+Promise.all([
+    faceapi.nets.tinyFaceDetector.loadFromUri('/models1'),
+    faceapi.nets.faceLandmark68Net.loadFromUri('/models1'),
+    faceapi.nets.faceRecognitionNet.loadFromUri('/models1'),
+    faceapi.nets.ssdMobilenetv1.loadFromUri('/models1')
+]).then(loadArr)
+
+async function loadArr() {
+    let json = json
+    startVideo(json)
+}
+
+async function startVideo(json) {
+    const container = document.createElement('div')
+    container.style.position = 'relative'
+    document.body.append(container)
+    const LabeledFaceDescriptors = await loadLabeledImages(json)
+    const faceMatcher = new faceapi.FaceMatcher(LabeledFaceDescriptors, 0.6)
+
+    navigator.mediaDevices.getUserMedia({video: {} }).then( stream => {
+        console.log(stream);
+        video.srcObject = stream;
+    }).catch( err => {
+        console.error(err);
+    })
 
 video.addEventListener('play', () => {
         container.append(video)
