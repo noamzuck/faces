@@ -22,6 +22,6 @@ $files = array_diff(scandir($path), array('.', '..'));
 print_r(json_encode($files, JSON_PRETTY_PRINT));*/
 
 
-$files = scandir('/labeled_images/');
+$files = scandir('/');
 echo json_encode($files, JSON_PRETTY_PRINT);
 ?> 
