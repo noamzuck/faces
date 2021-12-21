@@ -8,10 +8,10 @@
   <title>Webcam</title>
   <script defer src="face-api.min.js"></script>
   <script>
-    console.log("<?php
-    $files = scandir('/labeled_images/');
-    echo json_encode($files, JSON_PRETTY_PRINT);
-    ?>")
+    let files = "<?php
+    $files = scandir('/');
+    json_encode($files, JSON_PRETTY_PRINT);
+    ?>"
   </script>
   <script defer src="script-live.js"></script>
   <style>
