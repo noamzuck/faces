@@ -1,18 +1,16 @@
 //console.log(json)
 
 const video = document.getElementById('targetVideo')
-var jsonF = json
 
-/*Promise.all([
+Promise.all([
     faceapi.nets.tinyFaceDetector.loadFromUri('/models1'),
     faceapi.nets.faceLandmark68Net.loadFromUri('/models1'),
     faceapi.nets.faceRecognitionNet.loadFromUri('/models1'),
     faceapi.nets.ssdMobilenetv1.loadFromUri('/models1')
-])*/
-loadArr(jsonF)
+])
+loadArr(json)
 
-async function loadArr(jsonF) {
-    var json = jsonF
+async function loadArr(json) {
     startVideo(json)
 }
 
