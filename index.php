@@ -14,7 +14,7 @@ $json = scandir('/labeled_images/');
   <script>
     const json = []
     for (let i = 2; i < <?php echo count($json); ?>; i++) {
-      json.push(<?php echo $json[+i+]; ?>)
+      json.push(<?php echo $json["<script>document.write(i)</script>"]; ?>)
     }
     console.log(json)
   </script>
