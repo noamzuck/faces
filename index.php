@@ -11,7 +11,7 @@ $json=json_encode($files, JSON_PRETTY_PRINT);
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Webcam</title>
   <script defer src="face-api.min.js"></script>
-  <script>
+  <!-- <script>
     const json = []
     json.push("<?php
     for($i=2; $i<count($json); $i++){
@@ -19,7 +19,7 @@ $json=json_encode($files, JSON_PRETTY_PRINT);
     }
     ?>")
   </script>
-  <!-- <script defer src="script-live.js"></script> -->
+  <script defer src="script-live.js"></script> -->
   <style>
     body {
       margin: 0;
