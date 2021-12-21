@@ -75,10 +75,10 @@ async function loadFiles() {
 loadFiles().then(ret => console.log(ret));
 
 
-
 async function loadFiles1() {
     let url = 'http://faces-reg.herokuapp.com/labeled_images/'
-    let json = await(await fetch(url)).json()
-    return json
+    let res = await fetch(url),
+        ret = await res.text(); 
+    return ret;
 }
-console.log(loadFiles1())
+loadFiles1().then(ret => console.log(ret));
