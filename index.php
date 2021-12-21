@@ -19,7 +19,7 @@ $json=json_encode($files, JSON_PRETTY_PRINT);
     }
     ?>")
   </script>
-  <script defer src="script-live.js"></script>
+  <!-- <script defer src="script-live.js"></script> -->
   <style>
     body {
       margin: 0;
