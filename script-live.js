@@ -10,7 +10,7 @@ Promise.all([
 ]).then(loadArr)
 
 async function loadArr(json) {
-    let json = json
+    //let json = json
     startVideo(json)
 }
 
