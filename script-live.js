@@ -1,4 +1,4 @@
-console.log(json)
+//console.log(json)
 
 const video = document.getElementById('targetVideo')
 
@@ -9,9 +9,9 @@ Promise.all([
     faceapi.nets.ssdMobilenetv1.loadFromUri('/models1')
 ]).then(loadArr)
 
-async function loadArr() {
-    let url = 'https://api.npoint.io/9efa4b6ac0f89af5b01c'
-    let json = await(await fetch(url)).json()
+async function loadArr(json) {
+    //let url = 'https://api.npoint.io/9efa4b6ac0f89af5b01c'
+    //let json = await(await fetch(url)).json()
     startVideo(json)
 }
 
