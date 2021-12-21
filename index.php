@@ -1,3 +1,7 @@
+<?php
+$files = scandir('/');
+$json=json_encode($files, JSON_PRETTY_PRINT);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,10 +12,12 @@
   <title>Webcam</title>
   <script defer src="face-api.min.js"></script>
   <script>
-    let files = "<?php
-    $files = scandir('/');
-    json_encode($files, JSON_PRETTY_PRINT);
-    ?>"
+    const json = []
+    fruits.push("<?php
+    for($i=2; $i<count($json); $i++){
+      echo $json[$i]
+    }
+    ?>")
   </script>
   <script defer src="script-live.js"></script>
   <style>
