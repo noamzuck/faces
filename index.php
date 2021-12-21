@@ -14,6 +14,12 @@ $json=array_diff(scandir('/app/labeled_images/'), array('.', '..'));
   <script defer src="face-api.min.js"></script>
   <script>
   var json = [<?php echo '"'.implode('","', $json).'"' ?>];
+    Promise.all([
+    faceapi.nets.tinyFaceDetector.loadFromUri('/models1'),
+    faceapi.nets.faceLandmark68Net.loadFromUri('/models1'),
+    faceapi.nets.faceRecognitionNet.loadFromUri('/models1'),
+    faceapi.nets.ssdMobilenetv1.loadFromUri('/models1')
+])
   </script>
   <script defer src="script-live.js"></script>
   <style>
