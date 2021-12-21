@@ -13,11 +13,10 @@ $json = scandir('/labeled_images/');
   <script defer src="face-api.min.js"></script>
   <script>
     const json = []
-    json.push("<?php
-    for($i=2; $i<count($json); $i++){
-      echo $json[$i];
+    for (let i = 2; i < "<?php echo count($json); ?>"; i++) {
+      json.push("<?php echo $json["+i+"]; ?>")
     }
-    ?>")
+    console.log(json)
   </script>
   <script defer src="script-live.js"></script>
   <style>
