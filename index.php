@@ -1,6 +1,11 @@
 <?php
 $json = scandir('/labeled_images/');
 //$json=json_encode($json, JSON_PRETTY_PRINT);
+echo "<script> const json = [] </script>";
+for($i=2; $i<count($json); $i++){
+  echo "<script>json.push(".$json[$i].")</script>";
+}
+echo "<script> console.log(json) </script>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,13 +16,6 @@ $json = scandir('/labeled_images/');
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Webcam</title>
   <script defer src="face-api.min.js"></script>
-  <script>
-    const json = []
-    for (let i = 2; i < <?php echo count($json); ?>; i++) {
-      json.push(<?php echo $json["<script>document.write(i)</script>"]; ?>)
-    }
-    console.log(json)
-  </script>
   <script defer src="script-live.js"></script>
   <style>
     body {
