@@ -42,13 +42,7 @@ video.addEventListener('play', () => {
         const results = resizedDetections.map(d => faceMatcher.findBestMatch(d.descriptor))
         results.forEach((result, i) => {
             const box = resizedDetections[i].detection.box
-            if(result.toString().includes('.jpg')){
-            const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString().replace('.jpg','') })
-            }else if(result.toString().includes('.jpeg')){
-            const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString().replace('.jpeg','') })
-            }else if(result.toString().includes('.png')){
-            const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString().replace('.png','') })
-            }
+            const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString().split(".")[0] })
             drawBox.draw(canvas)
         })
     }, 100)
