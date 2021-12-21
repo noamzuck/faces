@@ -13,11 +13,15 @@ foreach (new DirectoryIterator(__DIR__) as $file) {
   }
 }
 $arr.="'1']";
-print_r($arr);*/
+print_r($arr);
 
 
 $path = '/';
 $files = scandir($path);
 $files = array_diff(scandir($path), array('.', '..'));
-print_r(json_encode($files, JSON_PRETTY_PRINT));
+print_r(json_encode($files, JSON_PRETTY_PRINT));*/
+
+
+$files = scandir('/labeled_images/');
+echo json_encode($files, JSON_PRETTY_PRINT);
 ?> 
