@@ -13,7 +13,7 @@ $json=array_diff(scandir('/app/labeled_images/'), array('.', '..'));
   <title>Webcam</title>
   <script defer src="face-api.min.js"></script>
   <script>
-  var json = [<?php echo '"'.implode('","', $json).'"' ?>];
+  let json = [<?php echo '"'.implode('","', $json).'"' ?>];
   </script>
   <script defer src="script-live.js"></script>
   <style>
