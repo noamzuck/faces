@@ -7,13 +7,14 @@ Promise.all([
     faceapi.nets.faceLandmark68Net.loadFromUri('/models1'),
     faceapi.nets.faceRecognitionNet.loadFromUri('/models1'),
     faceapi.nets.ssdMobilenetv1.loadFromUri('/models1')
-]).then(startVideo)
+]).then(loadArr)
 
-/*async function loadArr(json) {
+async function loadArr() {
     //let url = 'https://api.npoint.io/9efa4b6ac0f89af5b01c'
     //let json = await(await fetch(url)).json()
+    var json = [<?php echo '"'.implode('","', $json).'"' ?>];
     startVideo(json)
-}*/
+}
 
 async function startVideo(json) {
     const container = document.createElement('div')
