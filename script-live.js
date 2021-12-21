@@ -7,7 +7,9 @@ Promise.all([
     faceapi.nets.faceLandmark68Net.loadFromUri('/models1'),
     faceapi.nets.faceRecognitionNet.loadFromUri('/models1'),
     faceapi.nets.ssdMobilenetv1.loadFromUri('/models1')
-]).then(startVideo(json))
+])
+
+startVideo(json)
 
 /*async function loadArr(json) {
     //let url = 'https://api.npoint.io/9efa4b6ac0f89af5b01c'
