@@ -1,5 +1,3 @@
-//console.log(json)
-
 const video = document.getElementById('targetVideo')
 
 Promise.all([
@@ -10,6 +8,8 @@ Promise.all([
 ]).then(loadArr)
 
 async function loadArr() {
+    let url = 'https://api.npoint.io/9efa4b6ac0f89af5b01c'
+    let json = await(await fetch(url)).json()
     startVideo(json)
 }
 
@@ -42,7 +42,7 @@ video.addEventListener('play', () => {
         const results = resizedDetections.map(d => faceMatcher.findBestMatch(d.descriptor))
         results.forEach((result, i) => {
             const box = resizedDetections[i].detection.box
-            const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString().split(".")[0] })
+            const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString() })
             drawBox.draw(canvas)
         })
     }, 100)
@@ -54,7 +54,7 @@ function loadLabeledImages(json) {
     return Promise.all(
         labels.map(async label => {
             const descriptions = []
-                const img = await faceapi.fetchImage(`labeled_images/${label}`)
+                const img = await faceapi.fetchImage(`labeled_images/${label}.jpg`)
                 const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
                 descriptions.push(detections.descriptor)
 
@@ -62,15 +62,3 @@ function loadLabeledImages(json) {
         })
     )
 }
-
-
-/*
-async function loadFiles() {
-    let url = 'https://faces-reg.herokuapp.com/index1.php'
-    let res = await fetch(url),
-        ret = await res.text(); 
-    return ret; // a Promise() actually.
-    //console.log(json)
-}
-loadFiles().then(ret => console.log(ret));
-*/
