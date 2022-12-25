@@ -8,8 +8,10 @@ Promise.all([
 ]).then(loadArr)
 
 async function loadArr() {
-    let url = 'https://api.npoint.io/9efa4b6ac0f89af5b01c'
-    let json = await(await fetch(url)).json()
+    /*let url = 'https://api.npoint.io/9efa4b6ac0f89af5b01c'
+    let json = await(await fetch(url)).json()*/
+    
+    let json = ['Adam Sandler','Andy Samberg','Angelina Jolie','Arnold Schwarzenegger','Benedict Cumberbatch','Brad Pitt','Chedwick Boseman','Chris Evans','Chris Hemsworth','Chris Pine','Chris Pratt','Conan OBrien','Daniel Radcliffe','David Schwimmer','Dwayne Johnson','Elizabeth Olsen','Emma Stone','Emma Watson','Gal Gadot','George Clooney','Hailee Steinfeld','James Corden','James Earl Jones','Jason Statham','Jennifer Aniston','Jennifer Lawrence','Jennifer Lopez','Jesse Eisenberg','Jim Parsons','Jimmy Fallon','Jimmy Kimmel','Johnny Depp','Julia Roberts','Kaley Cuoco','Kevin Hurt','Leonardo Decaprio4','Leonardo DiCaprio','Margot Robbie','Mark Wahlberg','Morgan Freeman','Neil Patrick Harris','Paul Walker','Reese Witherspoon','Robert Downey Jr.','Ryan Reynolds','Samuel L. Jackson','Sandra Bullock','Scarlett Johansson','Stan Lee','Steve Carell','Tom Cruise','Tom Holland','Vin Diesel','Will Smith','Zac Efron','Zendaya']
     startVideo(json)
 }
 
