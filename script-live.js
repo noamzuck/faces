@@ -12,6 +12,7 @@ async function loadArr() {
     let json = await(await fetch(url)).json()*/
     
     let json = ['Adam Sandler','Andy Samberg','Angelina Jolie','Arnold Schwarzenegger','Benedict Cumberbatch','Brad Pitt','Chedwick Boseman','Chris Evans','Chris Hemsworth','Chris Pine','Chris Pratt',"Conan O'Brien",'Daniel Radcliffe','David Schwimmer','Dwayne Johnson','Elizabeth Olsen','Emma Stone','Emma Watson','Gal Gadot','George Clooney','Hailee Steinfeld','James Corden','James Earl Jones','Jason Statham','Jennifer Aniston','Jennifer Lawrence','Jennifer Lopez','Jesse Eisenberg','Jim Parsons','Jimmy Fallon','Jimmy Kimmel','Johnny Depp','Julia Roberts','Kaley Cuoco','Kevin Hurt','Leonardo Decaprio4','Leonardo DiCaprio','Margot Robbie','Mark Wahlberg','Morgan Freeman','Neil Patrick Harris','Paul Walker','Reese Witherspoon','Robert Downey Jr.','Ryan Reynolds','Samuel L. Jackson','Sandra Bullock','Scarlett Johansson','Stan Lee','Steve Carell','Tom Cruise','Tom Holland','Vin Diesel','Will Smith','Zac Efron','Zendaya']
+    json = ['therock']
     startVideo(json)
 }
 
@@ -56,7 +57,7 @@ function loadLabeledImages(json) {
     return Promise.all(
         labels.map(async label => {
             const descriptions = []
-                const img = await faceapi.fetchImage(`labeled_images/${label}.jpg`)
+                const img = await faceapi.fetchImage(`faces/${label}.jpg`)
                 const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
                 descriptions.push(detections.descriptor)
 
